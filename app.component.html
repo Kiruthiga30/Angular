@@ -1,18 +1,18 @@
-<form [formGroup]="reactiveform" (ngSubmit)="Submit()">
-  <div>
-    <label for="name">Enter Name:</label><br>
-    <input type="text" name="name" id="name" formControlName="name">
-    <div *ngIf="name?.invalid&&(name?.dirty||name?.touched)">
-      <div *ngIf="name?.hasError('required')">Name is required</div>
+<form #templateForm="ngForm" (ngSubmit)="Submit()">
+    <div>
+        <label for="name">Enter Name:</label><br>
+        <input type="text" name="name" id="name" [(ngModel)]="model.name" #name="ngModel" required>
+        <div *ngIf="name.invalid&&(name.dirty||name.touched)">
+            <div *ngIf="name.hasError('required')">Name is required</div>
+        </div>
     </div>
-  </div>
-  <div>
-    <label for="email">Enter Email:</label>
-    <input type="text" name="email" id="email" formControlName="email">
-    <div *ngIf="email?.invalid&&(email?.dirty||email?.touched)">
-      <div *ngIf="email?.hasError('required')">Email is required</div>
-      <div *ngIf="email?.hasError('email')">Email should be valid</div>
+    <div>
+        <label for="email">Enter Email:</label><br>
+        <input type="text" name="email" id="email" [(ngModel)]="model.email" #email="ngModel" required>
+        <div *ngIf="email.invalid&&(email.dirty||email.touched)">
+            <div *ngIf="email.hasError('required')">Email is required</div>
+            <div *ngIf="email.hasError('email')">Enter valid EmailId</div>
+        </div>
     </div>
-  </div>
-  <button type="submit">Submit</button>
+    <button type="submit">Submit</button>
 </form>
