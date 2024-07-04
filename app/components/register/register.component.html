@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Registration Form</h1>
+    <form #registerForm="ngForm" (ngSubmit)="Submit(registerForm)">
+        <div class="data">
+            <label for="username">Enter Username:</label>
+            <input type="text" name="username" id="username" autocomplete="name" [(ngModel)]="model.username"
+                #username="ngModel" required>
+            <div *ngIf="username.invalid&&(username.dirty||username.touched)">
+                <div *ngIf="username.hasError('required')">Name is required</div>
+            </div>
+        </div>
+        <div class="data">
+            <label for="email">Enter Email:</label>
+            <input type="email" name="email" id="email" autocomplete="email" [(ngModel)]="model.email" #email="ngModel"
+                required>
+            <div *ngIf="email.invalid&&(email.dirty||email.touched)">
+                <div *ngIf="email.hasError('required')">Email is required</div>
+                <div *ngIf="email.hasError('unique')">Email should be unique</div>
+                <div *ngIf="email.hasError('email')">Email should be valid</div>
+            </div>
+        </div>
+        <div class="data">
+            <label for="password">Enter Password:</label>
+            <input type="password" name="password" id="password" autocomplete="new-password"
+                [(ngModel)]="model.password" #password="ngModel" required>
+            <div *ngIf="password.invalid&&(password.dirty||password.touched)">
+                <div *ngIf="password.hasError('required')">Password is required</div>
+            </div>
+        </div>
+        <div class="data">
+            <label for="role">Enter the Role:</label>
+            <input type="text" name="role" id="role" [(ngModel)]="model.role" #role="ngModel" required>
+            <div *ngIf="role.invalid&&(role.dirty||role.touched)">
+                <div *ngIf="role.hasError('required')">Role is required</div>
+            </div>
+        </div>
+        <button type="submit" class="btn">Register</button>
+    </form>
+</div>

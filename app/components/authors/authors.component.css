@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  padding: 20px;
+  text-align: center;
+}
+
+.author {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-top: 20px;
+}
+
+.author h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.author form {
+  display: flex;
+  flex-direction: column;
+}
+
+.author form div {
+  margin-bottom: 15px;
+}
+
+.author form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.author form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.author form button {
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4b4a4a;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}

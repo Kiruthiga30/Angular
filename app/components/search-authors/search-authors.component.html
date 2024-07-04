@@ -1,0 +1,15 @@
+<div class="author">
+  <h2>Total Authors: {{ filterAuthors.length }}</h2>
+  <div>
+    <label for="search">Search:</label>
+    <input type="text" id="search" [(ngModel)]="searchTerm" (input)="Search()">
+  </div>
+  <div *ngIf="filterAuthors.length === 0">No Authors Available</div>
+  <ul *ngIf="filterAuthors.length > 0">
+    <li *ngFor="let author of filterAuthors">
+      <p><strong>Author ID:</strong> {{ author.id }}</p>
+      <p><strong>Name:</strong> {{ author.name }}</p>
+      <p><strong>Bio:</strong> {{ author.bio }}</p>
+    </li>
+  </ul>
+</div>

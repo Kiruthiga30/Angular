@@ -1,0 +1,40 @@
+<h1>Library Management System</h1>
+<div class="author">
+  <h2>Author Management</h2>
+  <form #authorForm="ngForm">
+    <div>
+      <label for="id">Author ID:</label>
+      <input type="number" id="id" name="id" [(ngModel)]="model.id" #id="ngModel" required>
+      <div *ngIf="id.invalid&&(id.dirty||id.touched)">
+        <div *ngIf="id.hasError('required')">Id is required</div>
+      </div>
+    </div>
+    <div>
+      <label for="name">Author Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="model.name" #name="ngModel" required>
+      <div *ngIf="name.invalid&&(name.dirty||name.touched)">
+        <div *ngIf="name.hasError('required')">Name is required</div>
+      </div>
+    </div>
+    <div>
+      <label for="bio">Bio:</label>
+      <input type="text" id="bio" name="bio" [(ngModel)]="model.bio" #bio="ngModel" required>
+      <div *ngIf="bio.invalid&&(bio.dirty||bio.touched)">
+        <div *ngIf="bio.hasError('required')">Bio is required</div>
+      </div>
+    </div>
+    <button type="button" (click)="addAuthor(authorForm.value)">Add Author</button>
+    <button type="button" (click)="updateAuthor(authorForm.value)">Update Author</button>
+    <button type="button" (click)="deleteAuthor(authorForm.value.id)">Delete Author</button>
+    <button type="button" (click)="displayAllAuthors()">Get Author</button>
+    <button>
+      <nav>
+        <ul>
+          <li><a routerLink="/searchAuthor" routerLinkActive="active" ariaCurrentWhenActive="page">Search Authors</a>
+          </li>
+        </ul>
+      </nav>
+    </button>
+    <router-outlet></router-outlet>
+  </form>
+</div>

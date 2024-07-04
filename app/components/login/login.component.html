@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Login Form</h1>
+    <form #loginForm="ngForm" (ngSubmit)="Submit(loginForm)">
+        <div class="data">
+            <label for="email">Enter Email:</label>
+            <input type="email" name="email" id="email" autocomplete="email" [(ngModel)]="model.email" #email="ngModel"
+                required>
+            <div *ngIf="email.invalid&&(email.dirty||email.touched)">
+                <div *ngIf="email.hasError('required')">Email is required</div>
+            </div>
+        </div>
+        <div class="data">
+            <label for="password">Enter Password:</label>
+            <input type="password" name="password" id="password" autocomplete="new-password"
+                [(ngModel)]="model.password" #password="ngModel" required>
+            <div *ngIf="password.invalid&&(password.dirty||password.touched)">
+                <div *ngIf="password.hasError('required')">Password is required</div>
+            </div>
+        </div>
+        <button type="submit" class="btn">Login</button>
+    </form>
+</div>
