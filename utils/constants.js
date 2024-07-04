@@ -1,0 +1,28 @@
+module.exports = {
+  STATUS_CODES: {
+    OK: 200,
+    CREATED: 201,
+    BAD_REQUEST: 400,
+    UNAUTHORIZED: 401,
+    DENIED: 403,
+    NOT_FOUND: 404,
+    INTERNAL_SERVER_ERROR: 500,
+  },
+  MESSAGES: {
+    USER_ALREADY_EXISTS: "User already exists",
+    INVALID_CREDENTIALS: "Invalid credentials",
+    REGISTER_SUCCESS: "User registered successfully",
+    LOGIN_SUCCESS: "User logged in successfully",
+    NO_TOKEN: "No token, authorization denied",
+    SERVER_ERROR: "Server error",
+    BOOK_NOT_FOUND: "Book not found",
+    BOOK_REMOVED: "Book removed",
+    AUTHOR_NOT_FOUND: "Author not found",
+    AUTHOR_REMOVED: "Author removed",
+    INVALID_TOKEN: "Token is invalid",
+    PROVIDE_DETAILS: "Please provide all the details",
+    USER_NOT_FOUND: "User not found",
+    ACCESS_DENIED: "Access denied",
+    BOOK_CREATED: "Book created",
+  },
+};
