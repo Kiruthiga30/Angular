@@ -1,0 +1,11 @@
+<div>
+  <h2>Total Authors: {{ totalAuthors }}</h2>
+  <div *ngIf="authors.length === 0">No Authors Available</div>
+  <ul *ngIf="authors.length > 0">
+    <li *ngFor="let author of authors">
+      <p><strong>Author ID:</strong> {{ author.id }}</p>
+      <p><strong>Name:</strong> {{ author.name }}</p>
+      <p><strong>Bio:</strong> {{ author.bio }}</p>
+    </li>
+  </ul>
+</div>

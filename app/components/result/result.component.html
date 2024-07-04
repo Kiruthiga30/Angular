@@ -1,0 +1,10 @@
+<div>
+  <h1>Book Details</h1>
+  <h2>{{ message }}</h2>
+  <div *ngIf="book">
+    <p><strong>Book ID:</strong> {{ book.bookid }}</p>
+    <p><strong>Title:</strong> {{ book.title }}</p>
+    <p><strong>Author ID:</strong> {{ book.authorId }}</p>
+    <p><strong>Published Date:</strong> {{ book.publishedDate }}</p>
+  </div>
+</div>

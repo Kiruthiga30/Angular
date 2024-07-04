@@ -1,0 +1,16 @@
+<div class="authors">
+  <h2>Total Books: {{ filterBooks.length }}</h2>
+  <div>
+    <label for="search">Search:</label>
+    <input type="text" id="search" [(ngModel)]="searchTerm" (input)="Search()">
+  </div>
+  <div *ngIf="filterBooks.length === 0">No books available.</div>
+  <ul *ngIf="filterBooks.length > 0">
+    <li *ngFor="let book of filterBooks">
+      <p><strong>Book ID:</strong> {{ book.bookid }}</p>
+      <p><strong>Title:</strong> {{ book.title }}</p>
+      <p><strong>Author ID:</strong> {{ book.authorid }}</p>
+      <p><strong>Published Date:</strong> {{ book.publishedDate }}</p>
+    </li>
+  </ul>
+</div>

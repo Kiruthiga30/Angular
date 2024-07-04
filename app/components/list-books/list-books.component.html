@@ -1,0 +1,12 @@
+<div>
+  <h2>Total Books: {{ totalBooks }}</h2>
+  <div *ngIf="books.length === 0">No Books Available</div>
+  <ul *ngIf="books.length > 0">
+    <li *ngFor="let book of books">
+      <p><strong>Book ID:</strong> {{ book.bookid }}</p>
+      <p><strong>Title:</strong> {{ book.title }}</p>
+      <p><strong>Author Id:</strong> {{ book.authorId }}</p>
+      <p><strong>Published Date:</strong> {{ book.publishedDate }}</p>
+    </li>
+  </ul>
+</div>
