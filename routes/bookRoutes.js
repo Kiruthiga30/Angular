@@ -28,7 +28,7 @@ router.put(
   updateBookById
 );
 
-// DELETE a book by ID ("admin" & "book admin")
+//delete a book by ID ("admin" & "book admin")
 router.delete(
   "/delete/:id",
   authMiddleware,
