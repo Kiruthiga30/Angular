@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Add Author</h1>
+<div mat-dialog-content>
+  <form #authorForm="ngForm">
+    <mat-form-field>
+      <input matInput placeholder="Name" name="name" [(ngModel)]="author['name']" required>
+      <mat-error *ngIf="authorForm.controls['name']?.invalid">Name is required</mat-error>
+      <mat-error *ngIf="authorForm.controls['name']?.touched">Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Bio" name="bio" [(ngModel)]="author['bio']" required>
+      <mat-error *ngIf="authorForm.controls['bio']?.invalid">Bio is required</mat-error>
+      <mat-error *ngIf="authorForm.controls['bio']?.touched">Bio is required</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="author" [disabled]="!authorForm.valid">Add</button>
+  <button mat-button (click)="onClick()">Cancel</button>
+</div>
