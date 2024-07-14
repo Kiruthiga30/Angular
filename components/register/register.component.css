@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 1em;
+  background-color: rgb(150, 149, 149);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(14, 0, 0, 0.87);
+}
+
+.text-danger {
+  color: rgb(126, 4, 4);
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.data {
+  margin-bottom: 1em;
+  padding: 5px;
+}
+
+input {
+  width: 90%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+}
+
+.btn {
+  width: 50%;
+  padding: 1em;
+  background-color: #272727;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin: 10px;
+  margin-left: 100px;
+}

@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>Add Book</h2>
+<mat-dialog-content>
+  <form #form="ngForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput name="title" [(ngModel)]="book.title" required>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Choose Genre</mat-label>
+      <mat-select id="journal" name="journal" [(ngModel)]="book.journal" required>
+        <mat-option value="History">History</mat-option>
+        <mat-option value="Science">Science</mat-option>
+        <mat-option value="Horror">Horror</mat-option>
+        <mat-option value="Drama">Drama</mat-option>
+        <mat-option value="Novel">Novel</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Author</mat-label>
+      <mat-select name="authorId" [(ngModel)]="book.authorId" required>
+        <mat-option *ngFor="let author of authors" [value]="author._id">
+          {{ author.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Published Date</mat-label>
+      <input matInput [matDatepicker]="picker" name="publishedDate" [(ngModel)]="book.publishedDate" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="noClick()">Cancel</button>
+  <button mat-button (click)="addClick(form)" [disabled]="form.invalid">Add</button>
+</mat-dialog-actions>

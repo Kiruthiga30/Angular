@@ -1,0 +1,43 @@
+h1 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 40px;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 35px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 1em;
+    background-color: rgb(158, 157, 157);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(83, 83, 83, 0.87);
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4b4a4a;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+ul li {
+    list-style-type: none;
+}
